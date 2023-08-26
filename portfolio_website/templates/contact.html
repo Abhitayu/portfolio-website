@@ -1,2 +1,23 @@
 {% extends 'base.html' %}
-{% block body %}This is Contact body{% endblock body %}This is Contact body
+{% block body %}
+<div class="upper-forms-container">
+    <div class="form-container">
+        <form class="form" method="post" action="/contact">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required="">
+        </div>
+        <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="text" id="email" name="email" required="">
+        </div>
+        <div class="form-group">
+            <label for="textarea">Message</label>
+            <textarea name="desc" id="desc" rows="10" cols="50" required="">          </textarea>
+        </div>
+        <button class="form-submit-btn" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}
